@@ -118,6 +118,11 @@ COASSOC_MAX_N=5000 uv run jupytext --execute notebooks/08_consensus_ensemble.py
 - `submissions/*.csv`: local Kaggle submissions, gitignored.
 - `submissions/RESULTS.md`: final candidate notes, committed.
 
+The committed `runs/*/*.npy` files are derived cluster-label artifacts used to
+reproduce downstream consensus and final-selection steps. They do not contain
+raw Kaggle input data; raw competition data remains under `data/` and is
+gitignored.
+
 ## Evaluation Doctrine
 
 Model selection uses:
