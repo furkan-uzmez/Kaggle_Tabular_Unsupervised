@@ -81,6 +81,8 @@ Build the empty package, install deps, write core modules, write tests.
 
 ### Task 1: Initialize uv project, pin Python, set up `.gitignore`
 
+**Relevant skills:** `uv-python-workflows`, `python-expert`
+
 **Files:**
 - Create: `pyproject.toml`
 - Create: `.python-version`
@@ -210,6 +212,8 @@ git commit -m "chore: initialize uv project with clustering package skeleton"
 
 ### Task 2: Write `scripts/download_data.sh`
 
+**Relevant skills:** `kaggle-asset-integration`, `uv-python-workflows`, `python-expert`
+
 **Files:**
 - Create: `scripts/download_data.sh`
 
@@ -283,6 +287,8 @@ git commit -m "feat(data): add Kaggle competition download script with preflight
 
 ### Task 3: Create `tests/` directory and clean `clustering/__init__.py`
 
+**Relevant skills:** `python-expert`, `uv-python-workflows`
+
 **Files:**
 - Modify: `src/clustering/__init__.py`
 - Create: `tests/__init__.py`
@@ -315,6 +321,8 @@ git commit -m "chore: scaffold tests directory and clean package init"
 ---
 
 ### Task 4: Implement `src/clustering/data.py`
+
+**Relevant skills:** `python-expert`, `kaggle-asset-integration`
 
 **Files:**
 - Create: `src/clustering/data.py`
@@ -384,6 +392,8 @@ git commit -m "feat(data): add load_raw and load_sample_submission helpers"
 ---
 
 ### Task 5: Implement `infer_column_types` in `src/clustering/preprocess.py`
+
+**Relevant skills:** `python-expert`, `data-exploration`, `feature-engineering-tabular`
 
 **Files:**
 - Create: `src/clustering/preprocess.py`
@@ -471,6 +481,8 @@ git commit -m "feat(preprocess): add infer_column_types heuristic"
 ---
 
 ### Task 6: Add `build_preprocessor` strategy factory and tests
+
+**Relevant skills:** `python-expert`, `feature-engineering-tabular`, `data-exploration`, `ml-reproducibility-seed-control`
 
 **Files:**
 - Modify: `src/clustering/preprocess.py`
@@ -681,6 +693,8 @@ git commit -m "feat(preprocess): add PreprocessStrategy and build_preprocessor f
 
 ### Task 7: Implement internal metrics in `src/clustering/evaluate.py`
 
+**Relevant skills:** `python-expert`, `ml-reproducibility-seed-control`
+
 **Files:**
 - Create: `src/clustering/evaluate.py`
 
@@ -783,6 +797,8 @@ git commit -m "feat(evaluate): add internal metrics container and computer"
 
 ### Task 8: Add bootstrap stability to `src/clustering/evaluate.py`
 
+**Relevant skills:** `python-expert`, `ml-reproducibility-seed-control`, `ml-training-error-prevention`
+
 **Files:**
 - Modify: `src/clustering/evaluate.py`
 
@@ -878,6 +894,8 @@ git commit -m "feat(evaluate): add bootstrap_stability protocol"
 ---
 
 ### Task 9: Add `scan_n_clusters` + tests for evaluate module
+
+**Relevant skills:** `python-expert`, `ml-reproducibility-seed-control`, `ml-training-error-prevention`
 
 **Files:**
 - Modify: `src/clustering/evaluate.py`
@@ -1035,6 +1053,8 @@ git commit -m "feat(evaluate): add scan_n_clusters protocol with sanity tests"
 
 ### Task 10: Implement `src/clustering/submission.py`
 
+**Relevant skills:** `python-expert`, `kaggle-notebook-competition`
+
 **Files:**
 - Create: `src/clustering/submission.py`
 
@@ -1146,6 +1166,8 @@ git commit -m "feat(submission): add write_submission and write_result_json help
 ---
 
 ### Task 11: Implement `src/clustering/viz.py`
+
+**Relevant skills:** `python-expert`, `data-visualization`
 
 **Files:**
 - Create: `src/clustering/viz.py`
@@ -1287,6 +1309,8 @@ Thin wrappers around sklearn / hdbscan / umap. Notebooks call them with paramete
 
 ### Task 12: Create `src/clustering/models/__init__.py`
 
+**Relevant skills:** `python-expert`
+
 **Files:**
 - Create: `src/clustering/models/__init__.py`
 
@@ -1312,6 +1336,8 @@ git commit -m "chore(models): create models subpackage"
 ---
 
 ### Task 13: Implement `src/clustering/models/kmeans.py`
+
+**Relevant skills:** `python-expert`, `ml-reproducibility-seed-control`
 
 **Files:**
 - Create: `src/clustering/models/kmeans.py`
@@ -1386,6 +1412,8 @@ git commit -m "feat(models): add KMeans and MiniBatchKMeans factories"
 ---
 
 ### Task 14: Implement `src/clustering/models/gmm.py`
+
+**Relevant skills:** `python-expert`, `ml-reproducibility-seed-control`, `search-first`
 
 **Files:**
 - Create: `src/clustering/models/gmm.py`
@@ -1521,6 +1549,8 @@ git commit -m "feat(models): add GMM, BGMM factories and BIC fn"
 
 ### Task 15: Implement `src/clustering/models/density.py`
 
+**Relevant skills:** `python-expert`, `feature-engineering-tabular`, `search-first`
+
 **Files:**
 - Create: `src/clustering/models/density.py`
 
@@ -1641,6 +1671,8 @@ git commit -m "feat(models): add DBSCAN, HDBSCAN factories and noise reassignmen
 
 ### Task 16: Implement `src/clustering/models/hierarchical.py`
 
+**Relevant skills:** `python-expert`, `ml-reproducibility-seed-control`, `search-first`
+
 **Files:**
 - Create: `src/clustering/models/hierarchical.py`
 
@@ -1760,6 +1792,8 @@ git commit -m "feat(models): add Agglomerative and Spectral (with KNN propagatio
 
 ### Task 17: Implement `src/clustering/models/consensus.py`
 
+**Relevant skills:** `python-expert`, `search-first`, `ml-training-error-prevention`
+
 **Files:**
 - Create: `src/clustering/models/consensus.py`
 
@@ -1866,6 +1900,8 @@ git commit -m "feat(models): add co-association matrix and consensus_labels"
 
 ### Task 18: Implement `src/clustering/dim_reduction.py`
 
+**Relevant skills:** `python-expert`, `ml-reproducibility-seed-control`, `search-first`
+
 **Files:**
 - Create: `src/clustering/dim_reduction.py`
 
@@ -1959,6 +1995,8 @@ Each notebook is a jupytext `.py` percent-format file. Every notebook:
 **General prerequisite for Phase C:** data must be downloaded. Run `bash scripts/download_data.sh` once before Task 19.
 
 ### Task 19: Write `notebooks/01_eda.py`
+
+**Relevant skills:** `jupyter-notebook-engineering`, `data-exploration`, `data-visualization`, `ml-reproducibility-seed-control`
 
 **Files:**
 - Create: `notebooks/01_eda.py`
@@ -2160,6 +2198,8 @@ git commit -m "feat(notebooks): add 01_eda exploratory notebook with findings"
 
 ### Task 20: Write `notebooks/02_preprocess_experiments.py`
 
+**Relevant skills:** `jupyter-notebook-engineering`, `feature-engineering-tabular`, `data-exploration`, `data-visualization`, `ml-reproducibility-seed-control`
+
 **Files:**
 - Create: `notebooks/02_preprocess_experiments.py`
 
@@ -2301,6 +2341,8 @@ git commit -m "feat(notebooks): add 02 preprocess strategy comparison"
 ---
 
 ### Task 21: Write `notebooks/03_baseline_kmeans.py`
+
+**Relevant skills:** `jupyter-notebook-engineering`, `feature-engineering-tabular`, `data-visualization`, `ml-reproducibility-seed-control`, `kaggle-notebook-competition`
 
 **Files:**
 - Create: `notebooks/03_baseline_kmeans.py`
@@ -2484,6 +2526,8 @@ git commit -m "feat(notebooks): add 03 KMeans baseline scan"
 
 ### Task 22: Write `notebooks/04_gmm_bgmm.py`
 
+**Relevant skills:** `jupyter-notebook-engineering`, `feature-engineering-tabular`, `data-visualization`, `ml-reproducibility-seed-control`, `ml-training-error-prevention`
+
 **Files:**
 - Create: `notebooks/04_gmm_bgmm.py`
 
@@ -2648,6 +2692,8 @@ git commit -m "feat(notebooks): add 04 GMM/BGMM with BIC sweep"
 ---
 
 ### Task 23: Write `notebooks/05_density_based.py`
+
+**Relevant skills:** `jupyter-notebook-engineering`, `feature-engineering-tabular`, `data-visualization`, `ml-reproducibility-seed-control`, `ml-training-error-prevention`
 
 **Files:**
 - Create: `notebooks/05_density_based.py`
@@ -2838,6 +2884,8 @@ git commit -m "feat(notebooks): add 05 density-based clustering"
 
 ### Task 24: Write `notebooks/06_agglomerative_spectral.py`
 
+**Relevant skills:** `jupyter-notebook-engineering`, `data-visualization`, `ml-reproducibility-seed-control`, `ml-training-error-prevention`, `search-first`
+
 **Files:**
 - Create: `notebooks/06_agglomerative_spectral.py`
 
@@ -3001,6 +3049,8 @@ git commit -m "feat(notebooks): add 06 agglomerative + spectral"
 
 ### Task 25: Write `notebooks/07_dim_reduction_clustering.py`
 
+**Relevant skills:** `jupyter-notebook-engineering`, `feature-engineering-tabular`, `data-visualization`, `ml-reproducibility-seed-control`, `ml-training-error-prevention`
+
 **Files:**
 - Create: `notebooks/07_dim_reduction_clustering.py`
 
@@ -3162,6 +3212,8 @@ git commit -m "feat(notebooks): add 07 dim reduction + reclustering"
 ---
 
 ### Task 26: Write `notebooks/08_consensus_ensemble.py`
+
+**Relevant skills:** `jupyter-notebook-engineering`, `data-visualization`, `ml-reproducibility-seed-control`, `ml-training-error-prevention`, `search-first`
 
 **Files:**
 - Create: `notebooks/08_consensus_ensemble.py`
@@ -3357,6 +3409,8 @@ git commit -m "feat(notebooks): add 08 consensus ensemble"
 
 ### Task 27: Write `notebooks/09_final_selection.py`
 
+**Relevant skills:** `jupyter-notebook-engineering`, `kaggle-notebook-competition`, `data-visualization`, `ml-reproducibility-seed-control`
+
 **Files:**
 - Create: `notebooks/09_final_selection.py`
 
@@ -3536,6 +3590,8 @@ Note: `submissions/*.csv` is gitignored; `git add submissions/` will only stage 
 
 ### Task 28: Create `submissions/RESULTS.md`
 
+**Relevant skills:** `codebase-documenter`, `kaggle-notebook-competition`, `data-visualization`
+
 **Files:**
 - Create: `submissions/RESULTS.md`
 
@@ -3586,6 +3642,8 @@ git commit -m "docs(submissions): record final candidates and post-mortem templa
 ---
 
 ### Task 29: Write `README.md`
+
+**Relevant skills:** `codebase-documenter`, `uv-python-workflows`, `kaggle-asset-integration`, `jupyter-notebook-engineering`
 
 **Files:**
 - Create: `README.md`
@@ -3745,6 +3803,8 @@ git commit -m "docs: add setup and reproducibility README"
 
 ### Task 30: Run full verification
 
+**Relevant skills:** `uv-python-workflows`, `jupyter-notebook-engineering`, `python-expert`, `ml-training-error-prevention`
+
 **Files:**
 - No file changes expected unless verification reveals issues.
 
@@ -3799,6 +3859,8 @@ If no fixes were needed, do not create an empty commit.
 ---
 
 ### Task 31: Final status summary
+
+**Relevant skills:** `codebase-documenter`, `managing-local-commits`
 
 **Files:**
 - No file changes expected.
