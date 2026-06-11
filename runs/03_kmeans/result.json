@@ -1,0 +1,56 @@
+{
+  "notebook": "03_baseline_kmeans",
+  "preprocess_strategy": "quantile+ordinal",
+  "k_range": [
+    2,
+    12
+  ],
+  "stability_n_iter": 3,
+  "best_model": {
+    "algorithm": "KMeans",
+    "params": {
+      "n_clusters": 3,
+      "n_init": 20,
+      "random_state": 42
+    },
+    "internal_metrics": {
+      "silhouette": 0.07251752460413884,
+      "davies_bouldin": 3.355965219255134,
+      "calinski_harabasz": 4582.944174054612,
+      "bic": null
+    },
+    "stability": {
+      "mean_ari": 0.9829179614795883,
+      "std_ari": 0.0038331387789761573,
+      "n_iter": 3,
+      "sample_frac": 0.8,
+      "per_iter": [
+        0.9827065816580177,
+        0.9783326047825673,
+        0.9877146979981799
+      ]
+    }
+  },
+  "minibatch_compare": {
+    "internal_metrics": {
+      "silhouette": 0.039097835692594965,
+      "davies_bouldin": 4.057494620962385,
+      "calinski_harabasz": 3930.934701156248,
+      "bic": null
+    },
+    "stability": {
+      "mean_ari": 0.29975858425371155,
+      "std_ari": 0.06383680847914255,
+      "n_iter": 3,
+      "sample_frac": 0.8,
+      "per_iter": [
+        0.31677281852032574,
+        0.36803423894745335,
+        0.21446869529335538
+      ]
+    }
+  },
+  "scan_summary_path": "runs/03_kmeans/scan_table.csv",
+  "labels_path": "runs/03_kmeans/labels_best.npy",
+  "timestamp": "2026-06-11T21:07:01+00:00"
+}
