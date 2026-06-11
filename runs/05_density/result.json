@@ -1,0 +1,65 @@
+{
+  "notebook": "05_density_based",
+  "preprocess_strategy": "quantile+ordinal",
+  "hdbscan_stability_n_iter": 2,
+  "best_model": {
+    "algorithm": "HDBSCAN",
+    "params": {
+      "min_cluster_size": 100,
+      "noise_policy": "nearest"
+    },
+    "internal_metrics": {
+      "silhouette": 0.17921046120528308,
+      "davies_bouldin": 2.0393248013703165,
+      "calinski_harabasz": 4350.986551304651,
+      "bic": null
+    },
+    "stability": {
+      "mean_ari": 0.3611235582210637,
+      "std_ari": 0.3611235582210637,
+      "n_iter": 2,
+      "sample_frac": 0.8,
+      "per_iter": [
+        0.7222471164421274,
+        0.0
+      ]
+    }
+  },
+  "alt_model": {
+    "algorithm": "DBSCAN",
+    "params": {
+      "eps": 5.2348690211056335,
+      "min_samples": 5
+    },
+    "n_clusters": 2,
+    "n_noise": 1508,
+    "internal_metrics": {
+      "silhouette": 0.3119692404753671,
+      "davies_bouldin": 1.0262881356539448,
+      "calinski_harabasz": 32.53829486207703,
+      "bic": null
+    }
+  },
+  "hdbscan_sweep": [
+    {
+      "min_cluster_size": 50,
+      "n_clusters": 4,
+      "n_noise": 53707,
+      "noise_frac": 0.5480306122448979,
+      "silhouette": 0.13824164081717202,
+      "davies_bouldin": 1.6051853332973103,
+      "calinski_harabasz": 483.1547903611822
+    },
+    {
+      "min_cluster_size": 100,
+      "n_clusters": 2,
+      "n_noise": 53004,
+      "noise_frac": 0.5408571428571428,
+      "silhouette": 0.18972637497904218,
+      "davies_bouldin": 1.5589908954493727,
+      "calinski_harabasz": 230.73050806283817
+    }
+  ],
+  "labels_path": "runs/05_density/labels_hdbscan.npy",
+  "timestamp": "2026-06-11T21:26:55+00:00"
+}
