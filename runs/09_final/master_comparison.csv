@@ -1,0 +1,10 @@
+notebook,algorithm,preprocess,silhouette,davies_bouldin,calinski_harabasz,bic,stab_mean,stab_std,labels_path,combined_score
+01_eda,,,,,,,,,,
+02_preprocess_experiments,,,,,,,,,,
+03_baseline_kmeans,KMeans,quantile+ordinal,0.07251752460413884,3.355965219255134,4582.944174054612,,0.9829179614795883,0.0038331387789761573,runs/03_kmeans/labels_best.npy,-0.0046123013629014165
+04_gmm_bgmm,GaussianMixture,quantile+freq+yeo,0.003931905553557733,5.946381338460709,1381.1392071043463,8079748.780152051,0.6357175481426981,0.000949502004480518,runs/04_gmm/labels_gmm_best.npy,-0.8896467987272674
+05_density_based,HDBSCAN,quantile+ordinal,0.17921046120528308,2.0393248013703165,4350.986551304651,,0.3611235582210637,0.3611235582210637,runs/05_density/labels_hdbscan.npy,-0.369134270271553
+06_agglomerative_spectral,AgglomerativeClustering,quantile+ordinal,0.27171888764655794,1.4870029200077572,31.080166245817296,,0.499612931428532,0.500387068571468,runs/06_hier_spectral/labels_agglomerative.npy,-0.13821928292671087
+07_dim_reduction_clustering,KMeans on umap_d2_nn30,quantile+ordinal,0.7624605894088745,0.5810822062871243,33757.434557252105,,1.0,0.0,runs/07_dim_reduction/labels_best.npy,1.7275710517796297
+08_consensus_ensemble,Consensus (average linkage on co-assoc),,0.15461219256545286,2.9464885589718826,186.38449699385387,,0.6325737803254404,0.2575639912185684,runs/08_consensus/labels_consensus.npy,-0.32595839849119645
+09_final_selection,,,,,,,,,,

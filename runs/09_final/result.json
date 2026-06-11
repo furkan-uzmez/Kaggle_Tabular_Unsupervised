@@ -1,0 +1,36 @@
+{
+  "notebook": "09_final_selection",
+  "candidates": {
+    "individual": {
+      "notebook": "07_dim_reduction_clustering",
+      "algorithm": "KMeans on umap_d2_nn30",
+      "preprocess": "quantile+ordinal",
+      "silhouette": 0.7624605894088745,
+      "davies_bouldin": 0.5810822062871243,
+      "calinski_harabasz": 33757.434557252105,
+      "bic": null,
+      "stab_mean": 1.0,
+      "stab_std": 0.0,
+      "labels_path": "runs/07_dim_reduction/labels_best.npy",
+      "combined_score": 1.7275710517796297
+    },
+    "consensus": {
+      "notebook": "08_consensus_ensemble",
+      "algorithm": "Consensus (average linkage on co-assoc)",
+      "preprocess": null,
+      "silhouette": 0.15461219256545286,
+      "davies_bouldin": 2.9464885589718826,
+      "calinski_harabasz": 186.38449699385387,
+      "bic": null,
+      "stab_mean": 0.6325737803254404,
+      "stab_std": 0.2575639912185684,
+      "labels_path": "runs/08_consensus/labels_consensus.npy",
+      "combined_score": -0.32595839849119645
+    }
+  },
+  "submissions": [
+    "submissions/01_dim_reduction_clustering.csv",
+    "submissions/02_consensus.csv"
+  ],
+  "timestamp": "2026-06-11T21:34:00+00:00"
+}
