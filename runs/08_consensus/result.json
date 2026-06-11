@@ -1,0 +1,40 @@
+{
+  "notebook": "08_consensus_ensemble",
+  "input_label_sets": {
+    "kmeans": "runs/03_kmeans/labels_best.npy",
+    "gmm": "runs/04_gmm/labels_gmm_best.npy",
+    "hdbscan": "runs/05_density/labels_hdbscan.npy",
+    "agglomerative": "runs/06_hier_spectral/labels_agglomerative.npy",
+    "dim_red": "runs/07_dim_reduction/labels_best.npy"
+  },
+  "consensus_n_clusters": 3,
+  "consensus_linkage": "average",
+  "subsampled_to": 5000,
+  "best_model": {
+    "algorithm": "Consensus (average linkage on co-assoc)",
+    "params": {
+      "n_clusters": 3,
+      "n_label_sets": 5
+    },
+    "internal_metrics": {
+      "silhouette": 0.15461219256545286,
+      "davies_bouldin": 2.9464885589718826,
+      "calinski_harabasz": 186.38449699385387,
+      "bic": null
+    },
+    "stability": {
+      "method": "leave-one-out ARI on consensus",
+      "mean_ari": 0.6325737803254404,
+      "std_ari": 0.2575639912185684,
+      "per_iter": [
+        0.622608144955484,
+        0.8210872644810496,
+        0.4370900739127375,
+        1.0,
+        0.28208341827793104
+      ]
+    }
+  },
+  "labels_path": "runs/08_consensus/labels_consensus.npy",
+  "timestamp": "2026-06-11T21:32:06+00:00"
+}
