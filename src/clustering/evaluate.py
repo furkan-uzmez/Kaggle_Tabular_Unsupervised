@@ -144,3 +144,46 @@ def bootstrap_stability(
         sample_frac=sample_frac,
         per_iter=aris,
     )
+
+
+def scan_n_clusters(
+    model_factory: Callable[[int], FitPredictFn],
+    X: np.ndarray,
+    *,
+    k_range,
+    stability_n_iter: int = 10,
+    stability_sample_frac: float = 0.8,
+    random_state: int = 42,
+    bic_fn: Callable[[int, np.ndarray], float] | None = None,
+) -> dict[int, dict]:
+    """Sweep n_clusters and record signals for each k.
+
+    Args:
+        model_factory: callable `k -> fit_predict(X) -> labels`. The factory
+            must produce a deterministic predictor for a given k.
+        X: preprocessed feature matrix.
+        k_range: iterable of integers (k values to try).
+        stability_n_iter: bootstrap iterations per k.
+        stability_sample_frac: subsample fraction per bootstrap iteration.
+        random_state: seed for bootstrap index sampling.
+        bic_fn: optional `(k, X) -> bic` callable for probabilistic models.
+
+    Returns:
+        Dict keyed by k. Each value: {"metrics": InternalMetrics,
+        "stability": StabilityReport}.
+    """
+    table: dict[int, dict] = {}
+    for k in k_range:
+        fp = model_factory(k)
+        labels = np.asarray(fp(X))
+        bic = bic_fn(k, X) if bic_fn is not None else None
+        metrics = compute_internal_metrics(X, labels, bic=bic)
+        stability = bootstrap_stability(
+            fp,
+            X,
+            n_iter=stability_n_iter,
+            sample_frac=stability_sample_frac,
+            random_state=random_state,
+        )
+        table[int(k)] = {"metrics": metrics, "stability": stability}
+    return table
