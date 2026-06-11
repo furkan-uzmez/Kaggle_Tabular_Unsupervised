@@ -36,6 +36,14 @@ def test_infer_column_types_basic(toy_df: pd.DataFrame) -> None:
     assert types.excluded == ["Id"]
 
 
+def test_infer_column_types_excludes_lowercase_id() -> None:
+    rng = np.random.default_rng(1)
+    df = pd.DataFrame({"id": np.arange(100), "a": rng.normal(size=100)})
+    types = infer_column_types(df)
+    assert types.excluded == ["id"]
+    assert types.continuous == ["a"]
+
+
 def test_infer_column_types_all_continuous() -> None:
     rng = np.random.default_rng(1)
     df = pd.DataFrame({"a": rng.normal(size=100), "b": rng.normal(size=100)})

@@ -20,6 +20,7 @@ from sklearn.preprocessing import (
 )
 
 ID_COLUMN = "Id"
+LOWER_ID_COLUMN = "id"
 CATEGORICAL_NUNIQUE_THRESHOLD = 20  # columns with <= 20 unique values are categorical
 
 
@@ -34,7 +35,7 @@ class ColumnTypes:
 
 def infer_column_types(
     df: pd.DataFrame,
-    id_columns: tuple[str, ...] = (ID_COLUMN,),
+    id_columns: tuple[str, ...] = (ID_COLUMN, LOWER_ID_COLUMN),
     nunique_threshold: int = CATEGORICAL_NUNIQUE_THRESHOLD,
 ) -> ColumnTypes:
     """Heuristically split columns into continuous, categorical, and excluded.
