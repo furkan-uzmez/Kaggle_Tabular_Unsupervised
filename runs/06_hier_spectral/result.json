@@ -1,0 +1,62 @@
+{
+  "notebook": "06_agglomerative_spectral",
+  "preprocess_strategy": "quantile+ordinal",
+  "subsample_size": 3000,
+  "k_range": [
+    2,
+    8
+  ],
+  "agglomerative_stability_n_iter": 2,
+  "used_full_data_for_agg": false,
+  "spectral_subsample_size": 2000,
+  "spectral_stability_n_iter": 2,
+  "best_model": {
+    "algorithm": "AgglomerativeClustering",
+    "params": {
+      "n_clusters": 2,
+      "linkage": "average"
+    },
+    "internal_metrics": {
+      "silhouette": 0.27171888764655794,
+      "davies_bouldin": 1.4870029200077572,
+      "calinski_harabasz": 31.080166245817296,
+      "bic": null
+    },
+    "stability": {
+      "mean_ari": 0.499612931428532,
+      "std_ari": 0.500387068571468,
+      "n_iter": 2,
+      "sample_frac": 0.8,
+      "per_iter": [
+        -0.0007741371429360032,
+        1.0
+      ]
+    }
+  },
+  "alt_model": {
+    "algorithm": "SpectralClustering",
+    "params": {
+      "n_clusters": 2,
+      "affinity": "nearest_neighbors",
+      "n_neighbors": 10
+    },
+    "internal_metrics": {
+      "silhouette": 0.15241952391459626,
+      "davies_bouldin": 1.960532544579659,
+      "calinski_harabasz": 56.27983899705334,
+      "bic": null
+    },
+    "stability": {
+      "mean_ari": 0.5351461428756481,
+      "std_ari": 0.0030504537396490172,
+      "n_iter": 2,
+      "sample_frac": 0.8,
+      "per_iter": [
+        0.5320956891359991,
+        0.5381965966152972
+      ]
+    }
+  },
+  "labels_path": "runs/06_hier_spectral/labels_agglomerative.npy",
+  "timestamp": "2026-06-11T21:28:28+00:00"
+}
