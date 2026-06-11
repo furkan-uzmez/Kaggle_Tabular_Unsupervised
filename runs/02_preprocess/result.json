@@ -1,0 +1,107 @@
+{
+  "notebook": "02_preprocess_experiments",
+  "k_probe": 10,
+  "best_general_strategy": "quantile+ordinal",
+  "best_davies_bouldin_strategy": "quantile+ordinal",
+  "best_calinski_harabasz_strategy": "quantile+ordinal",
+  "gmm_friendly_strategy": "quantile+freq+yeo",
+  "strategies": {
+    "standard+onehot": {
+      "config": {
+        "continuous_scaler": "standard",
+        "categorical_encoder": "onehot",
+        "power_transform": false
+      },
+      "result": {
+        "shape": [
+          98000,
+          29
+        ],
+        "silhouette": 0.03069618739000846,
+        "davies_bouldin": 3.9803298324490646,
+        "calinski_harabasz": 1840.1896856199596
+      }
+    },
+    "standard+onehot+yeo": {
+      "config": {
+        "continuous_scaler": "standard",
+        "categorical_encoder": "onehot",
+        "power_transform": true
+      },
+      "result": {
+        "shape": [
+          98000,
+          29
+        ],
+        "silhouette": 0.029911235828843873,
+        "davies_bouldin": 4.007301739933066,
+        "calinski_harabasz": 1730.6580598227467
+      }
+    },
+    "robust+ordinal": {
+      "config": {
+        "continuous_scaler": "robust",
+        "categorical_encoder": "ordinal",
+        "power_transform": false
+      },
+      "result": {
+        "shape": [
+          98000,
+          29
+        ],
+        "silhouette": 0.03188748614471865,
+        "davies_bouldin": 3.9458781261357387,
+        "calinski_harabasz": 1938.4691594441151
+      }
+    },
+    "robust+freq": {
+      "config": {
+        "continuous_scaler": "robust",
+        "categorical_encoder": "target_freq",
+        "power_transform": false
+      },
+      "result": {
+        "shape": [
+          98000,
+          29
+        ],
+        "silhouette": 0.03188748614471865,
+        "davies_bouldin": 3.9458781261357387,
+        "calinski_harabasz": 1938.4691594441151
+      }
+    },
+    "quantile+ordinal": {
+      "config": {
+        "continuous_scaler": "quantile",
+        "categorical_encoder": "ordinal",
+        "power_transform": false
+      },
+      "result": {
+        "shape": [
+          98000,
+          29
+        ],
+        "silhouette": 0.04435393739583042,
+        "davies_bouldin": 3.2404200112298076,
+        "calinski_harabasz": 2840.39250245805
+      }
+    },
+    "quantile+freq+yeo": {
+      "config": {
+        "continuous_scaler": "quantile",
+        "categorical_encoder": "target_freq",
+        "power_transform": true
+      },
+      "result": {
+        "shape": [
+          98000,
+          29
+        ],
+        "silhouette": 0.02968594386171907,
+        "davies_bouldin": 4.009696505826691,
+        "calinski_harabasz": 2018.422149972864
+      }
+    }
+  },
+  "timestamp": "2026-06-11T20:09:49+00:00"
+}
