@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments
+.venv/
+.env
+
+# Data (downloaded, not committed)
+data/
+
+# Jupyter (jupytext .py is the source of truth)
+*.ipynb
+.ipynb_checkpoints/
+
+# Submissions: keep RESULTS.md, ignore CSVs
+submissions/*.csv
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Local agent/browser/Kaggle artifacts
+.agent/
+.playwright-mcp/
+kaggle_pages/
