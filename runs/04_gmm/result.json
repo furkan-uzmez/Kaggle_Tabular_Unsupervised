@@ -1,0 +1,100 @@
+{
+  "notebook": "04_gmm_bgmm",
+  "preprocess_strategy": "quantile+freq+yeo",
+  "k_range": [
+    2,
+    8
+  ],
+  "gmm_n_init": 1,
+  "stability_n_iter": 2,
+  "bgmm_stability_n_iter": 2,
+  "best_model": {
+    "algorithm": "GaussianMixture",
+    "params": {
+      "n_components": 8,
+      "covariance_type": "full",
+      "n_init": 3,
+      "random_state": 42
+    },
+    "internal_metrics": {
+      "silhouette": 0.003931905553557733,
+      "davies_bouldin": 5.946381338460709,
+      "calinski_harabasz": 1381.1392071043463,
+      "bic": 8079748.780152051
+    },
+    "stability": {
+      "mean_ari": 0.6357175481426981,
+      "std_ari": 0.000949502004480518,
+      "n_iter": 2,
+      "sample_frac": 0.8,
+      "per_iter": [
+        0.6366670501471786,
+        0.6347680461382176
+      ]
+    }
+  },
+  "alt_model": {
+    "algorithm": "BayesianGaussianMixture",
+    "params": {
+      "n_components_max": 8,
+      "covariance_type": "full",
+      "effective_k": 8
+    },
+    "internal_metrics": {
+      "silhouette": 0.0023036489350467594,
+      "davies_bouldin": 6.716018504676114,
+      "calinski_harabasz": 1297.5772676303036,
+      "bic": null
+    },
+    "stability": {
+      "mean_ari": 0.7091922130430142,
+      "std_ari": 0.011102715658223352,
+      "n_iter": 2,
+      "sample_frac": 0.8,
+      "per_iter": [
+        0.6980894973847909,
+        0.7202949287012376
+      ]
+    }
+  },
+  "bic_curves": {
+    "full": [
+      8161931.041569972,
+      8136518.2438606145,
+      8115992.54719605,
+      8100135.149543839,
+      8088397.5866758395,
+      8083551.119514244,
+      8079748.780152051
+    ],
+    "tied": [
+      8206753.465295994,
+      8190865.88612748,
+      8186901.3161911825,
+      8182151.326173454,
+      8161736.692848812,
+      8148002.287844699,
+      8160265.089229824
+    ],
+    "diag": [
+      8246247.850076016,
+      8209722.077735491,
+      8176421.843512781,
+      8153968.485680255,
+      8135417.850854752,
+      8126693.824572761,
+      8116621.827448709
+    ],
+    "spherical": [
+      8272526.231660159,
+      8242013.379680973,
+      8227990.609209851,
+      8212068.426416497,
+      8200226.130639904,
+      8193344.993316424,
+      8192086.942524724
+    ]
+  },
+  "labels_path": "runs/04_gmm/labels_gmm_best.npy",
+  "timestamp": "2026-06-11T21:21:01+00:00"
+}
